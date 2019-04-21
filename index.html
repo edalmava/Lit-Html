@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lit-HTML</title>
+  <script type="module" src="lithtml.js"></script>
+</head>
+<body>
+  <script>
+    const html = (strings, ...values) => values;
+	  const template = (obj) => html `Hola desde ${obj.a} hasta ${obj.b}`
+	  console.log(template({a: 5, b: 10}));
+  </script>
+  <template id="template"><p>Smile!</p></template>
+  <script>
+   let num = 3;
+   const fragment = document.getElementById('template').content.cloneNode(true);
+   while (num-- > 1) {
+     fragment.firstChild.before(fragment.firstChild.cloneNode(true));
+     fragment.firstChild.textContent += fragment.lastChild.textContent;
+   }
+   document.body.appendChild(fragment);
+  </script>
+</body>
+</html>

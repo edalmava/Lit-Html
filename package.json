@@ -1,0 +1,18 @@
+{
+  "name": "lit-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lithtml.js",
+  "dependencies": {
+    "lit-html": "^1.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0"
+  },
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "author": "",
+  "license": "ISC"
+}
